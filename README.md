@@ -198,6 +198,23 @@ npm run build
 # 将dist目录部署到Web服务器
 ```
 
+## Docker 启动方式
+
+1. 在项目根目录执行以下命令构建所有镜像：
+   ```bash
+   docker-compose build
+   ```
+
+2. 构建完成后启动所有服务：
+   ```bash
+   docker-compose up -d
+   ```
+
+3. 如需关闭所有服务：
+   ```bash
+   docker-compose down
+   ```
+
 ## 贡献指南
 
 1. Fork 项目
