@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# 测试删除任务API
+
+TASK_ID=${1:-1}
+
+# 登录获取token
+LOGIN_RESPONSE=$(curl -s -X POST http://localhost:8080/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "admin",
+    "password": "admin123"
+  }')
+TOKEN=$(echo $LOGIN_RESPONSE | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
+if [ -z "$TOKEN" ]; then
+    echo "登录失败，无法获取token"
+    echo "登录响应: $LOGIN_RESPONSE"
+    exit 1
+fi
+
+echo "获取到token: $TOKEN"
+
+echo "发送删除任务请求..."
+curl -X DELETE http://localhost:8080/api/tasks/$TASK_ID \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -w "\nHTTP状态码: %{http_code}\n" 
