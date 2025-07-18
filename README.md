@@ -129,40 +129,42 @@ npm run dev
 - 角色权限控制
 
 ### 计划管理
-- 创建暑期计划
-- 计划详情编辑
+- 创建/编辑/删除暑期计划
+- 计划详情查看
 - 计划状态跟踪
 - 计划标签分类
 
 ### 任务管理
-- 计划任务创建
-- 任务进度跟踪
+- 计划任务创建/编辑/删除
+- 任务进度跟踪与历史记录
 - 任务优先级设置
 - 工时统计
 
-### 笔记系统
-- 计划笔记记录
-- 反思总结
-- 想法收集
-- 笔记分类
-
-### 文件管理
-- 计划附件上传
-- 文件类型支持
-- 文件大小限制
-- 文件预览
+### 进度管理
+- 任务进度记录与修改
+- 进度历史查询
 
 ### 数据统计
 - 计划完成率统计
 - 任务进度分析
 - 时间投入分析
-- 可视化图表
+- 可视化图表（部分功能开发中）
 
 ## API文档
 
 启动后端服务后，访问以下地址查看API文档：
 - Swagger UI: `http://localhost:8080/api/swagger-ui.html`
 - OpenAPI JSON: `http://localhost:8080/api/api-docs`
+
+## API测试脚本
+
+本项目根目录下提供了丰富的Shell脚本用于API自动化测试，详见 [API_TESTS_README.md](./API_TESTS_README.md)。
+
+- 单接口测试：如 `test_login.sh`、`test_register.sh`、`test_create_plan.sh`、`test_create_task.sh` 等
+- 综合/串联测试：如 `test_all_apis.sh`、`test_all_progress_api.sh`
+- 进度相关测试：如 `test_task_progress_post.sh`、`test_task_progress_get.sh`
+
+请参考 `API_TESTS_README.md` 获取详细用法和接口说明。
 
 ## 开发指南
 
@@ -177,7 +179,7 @@ npm run dev
 1. 使用TypeScript确保类型安全
 2. 遵循Vue 3 Composition API规范
 3. 使用Element Plus组件库
-4. 实现响应式设计
+4. 实现响应式设计，兼容移动端
 5. 优化性能和用户体验
 
 ## 部署
@@ -199,9 +201,9 @@ npm run build
 ## 贡献指南
 
 1. Fork 项目
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
+2. 创建功能分支 (`git checkout -b feature/xxx`)
+3. 提交更改 (`git commit -m 'Add some feature'`)
+4. 推送到分支 (`git push origin feature/xxx`)
 5. 打开 Pull Request
 
 ## 许可证
@@ -210,6 +212,6 @@ npm run build
 
 ## 联系方式
 
-- 项目维护者：SummerPlan Team
-- 邮箱：support@summerplan.com
-- 项目地址：https://github.com/your-username/summer-plan-manager 
+- 项目维护者：rencclive
+- 邮箱：rencc@live.com
+- 项目地址：https://github.com/rencclive/summer-plan
