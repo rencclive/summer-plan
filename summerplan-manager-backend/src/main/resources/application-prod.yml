@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/summerplan_manager?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://db:3306/summerplan_manager?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:123456}
   
@@ -20,5 +20,5 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: WARN
 
 jwt:
-  secret: ${JWT_SECRET:summerplan-manager-secret-key-2024}
+  secret: lQw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw1Qn6Qw==
   expiration: ${JWT_EXPIRATION:86400000} 

@@ -53,6 +53,7 @@ import { ElMessage } from 'element-plus';
 import MainLayout from '@/layouts/MainLayout.vue';
 import { getPlans } from '@/api/plan';
 import type { SummerPlan } from '@/types/plan';
+import type { FormItemRule } from 'element-plus';
 const planList = ref<SummerPlan[]>([]);
 
 const route = useRoute();
@@ -73,7 +74,7 @@ const form = reactive({
   progress: 0,
 });
 
-const rules = {
+const rules: Record<string, FormItemRule[]> = {
   planId: [{ required: !planId.value, message: '请选择计划', trigger: 'change' }],
   title: [{ required: true, message: '请输入标题', trigger: 'blur' }],
   status: [{ required: true, message: '请选择状态', trigger: 'change' }],
@@ -81,9 +82,12 @@ const rules = {
   priority: [{ required: true, message: '请选择优先级', trigger: 'change' }],
   progress: [
     { required: true, message: '请输入进度', trigger: 'blur' },
-    { type: 'number', min: 0, max: 100, message: '进度范围0-100', trigger: 'blur' }
+    { type: 'number' as any, min: 0, max: 100, message: '进度范围0-100', trigger: 'blur' }
   ],
 };
+
+const formRef = ref();
+const loading = ref(false);
 
 onMounted(async () => {
   if (!planId.value) {

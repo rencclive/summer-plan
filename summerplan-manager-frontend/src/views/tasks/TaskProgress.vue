@@ -34,11 +34,18 @@ import { getTaskProgressHistory, recordTaskProgress } from '@/api/task';
 import { ElMessage } from 'element-plus';
 import MainLayout from '@/layouts/MainLayout.vue';
 
+interface ProgressItem {
+  id: number;
+  timestamp: string;
+  status: string;
+  progress: string;
+}
+
 const route = useRoute();
 const router = useRouter();
 const planId = Number(route.query.planId);
 const taskId = Number(route.params.id);
-const progressList = ref([]);
+const progressList = ref<ProgressItem[]>([]);
 const formRef = ref();
 const form = ref({ progress: '' });
 const loading = ref(false);
