@@ -1,5 +1,6 @@
+-- 任务进度历史表
 CREATE TABLE task_progress_history (
-    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '进度历史ID',
     task_id BIGINT NOT NULL COMMENT '任务ID',
     user_id BIGINT NOT NULL COMMENT '用户ID',
     progress INT NOT NULL COMMENT '进度百分比',
