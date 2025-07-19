@@ -99,7 +99,7 @@ cd summerplan-manager-backend
 mvn spring-boot:run
 ```
 
-后端服务将在 `http://localhost:8080` 启动，API文档地址：`http://localhost:8080/api/swagger-ui.html`
+后端服务将在 `http://localhost:8080` 启动，API文档地址：`http://localhost:8080/swagger-ui/index.html`
 
 ### 前端启动
 
@@ -153,8 +153,8 @@ npm run dev
 ## API文档
 
 启动后端服务后，访问以下地址查看API文档：
-- Swagger UI: `http://localhost:8080/api/swagger-ui.html`
-- OpenAPI JSON: `http://localhost:8080/api/api-docs`
+- Swagger UI: `http://localhost:8080/swagger-ui/index.html`
+- OpenAPI JSON: `http://localhost:8080/api-docs`
 
 ## API测试脚本
 
